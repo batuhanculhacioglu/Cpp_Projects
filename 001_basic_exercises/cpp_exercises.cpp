@@ -9,7 +9,25 @@ using namespace std;
 //	Includes
 #include <sstream>
 
+namespace b1_ns{
+	int x = 2;
+	float y = 3.2;
+	void foo()
+	{
+		char d = 'D';
+		cout << "b1_ns namespace'in de foo fonksiyonu cagrildi : " << d << endl;
+	}
+}
 
+namespace b2_ns{
+	int x = 3;
+	float y = 2.7;
+	void boo()
+	{
+		bool b = true;
+		cout << "b2_ns namespace'in de boo fonksiyonu cagrildi : " << b << endl;
+	}
+}
 
 int main() {
 	/* Ekrana yazı yazdırma
@@ -135,8 +153,7 @@ int main() {
 	*/
 
 	/* Classlar içerisinde bellek yönetimi
-	 *	Burada neyse oluşturulup ve silinmesi test edilmiştir.
-	 */
+	 *	Burada neyse oluşturulup ve silinmesi test edilmiştir. Dinamik ve Statik
 	class myC{
 
 	public :
@@ -150,9 +167,20 @@ int main() {
 		}
 
 	};
-	myC employee;
-	myC *ptr = new myC();
-	delete ptr;
+	myC employee; // Nesne oluşturulup silinme işlemi derleyici tarafından gerçekleşmiştir.
+	myC *ptr = new myC(); // Nesne kullanıcı tarafından oluşturulmuştur.
+	delete ptr; // Nesne kullanıcı tarafından silinmelidir. Yoksa bellekte alan tutmaya devam eder.
+	*/
 
+
+
+	cout << "b1_ns namespace'in de x degiskeninin degeri : " << b1_ns::x << endl;
+	cout << "b2_ns namespace'in de x degiskeninin degeri : " << b2_ns::x << endl;
+
+	b1_ns::foo();
+	b2_ns::boo();
+
+	b1_ns::y = b2_ns::y;
+	cout << "b1_ns namespace'in de y degiskeninin yeni degeri : " << b1_ns::y << endl;
 	return 0;
 }
