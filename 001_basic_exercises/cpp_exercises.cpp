@@ -9,26 +9,6 @@ using namespace std;
 //	Includes
 #include <sstream>
 
-namespace b1_ns{
-	int x = 2;
-	float y = 3.2;
-	void foo()
-	{
-		char d = 'D';
-		cout << "b1_ns namespace'in de foo fonksiyonu cagrildi : " << d << endl;
-	}
-}
-
-namespace b2_ns{
-	int x = 3;
-	float y = 2.7;
-	void boo()
-	{
-		bool b = true;
-		cout << "b2_ns namespace'in de boo fonksiyonu cagrildi : " << b << endl;
-	}
-}
-
 int main() {
 	/* Ekrana yazı yazdırma
 	cout << "!!!Hello World!!!" << endl;
@@ -172,7 +152,26 @@ int main() {
 	delete ptr; // Nesne kullanıcı tarafından silinmelidir. Yoksa bellekte alan tutmaya devam eder.
 	*/
 
+	/* namespace olusturma ve kullanım örneği
+	namespace b1_ns{
+		int x = 2;
+		float y = 3.2;
+		void foo()
+		{
+			char d = 'D';
+			cout << "b1_ns namespace'in de foo fonksiyonu cagrildi : " << d << endl;
+		}
+	}
 
+	namespace b2_ns{
+		int x = 3;
+		float y = 2.7;
+		void boo()
+		{
+			bool b = true;
+			cout << "b2_ns namespace'in de boo fonksiyonu cagrildi : " << b << endl;
+		}
+	}
 
 	cout << "b1_ns namespace'in de x degiskeninin degeri : " << b1_ns::x << endl;
 	cout << "b2_ns namespace'in de x degiskeninin degeri : " << b2_ns::x << endl;
@@ -182,5 +181,7 @@ int main() {
 
 	b1_ns::y = b2_ns::y;
 	cout << "b1_ns namespace'in de y degiskeninin yeni degeri : " << b1_ns::y << endl;
+	*/
+
 	return 0;
 }
