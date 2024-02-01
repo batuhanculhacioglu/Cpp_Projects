@@ -183,5 +183,57 @@ int main() {
 	cout << "b1_ns namespace'in de y degiskeninin yeni degeri : " << b1_ns::y << endl;
 	*/
 
+	/* const kullanım örneği
+	int x = 3;
+	int y = 5;
+
+	int *const p1 = &x;
+	*p1 = 13;
+	//	p1 = &y error: assignment of read-only variable 'p1'
+	cout << "*p1 : " << *p1 << endl;
+
+	const int *p2 = &y;
+	// *p2 = 15; error: assignment of read-only location '* p2'
+	p2 = &x;
+	cout << "*p2 : " << *p2 << endl;
+
+	int z = 7;
+	typedef int* ip;
+	const ip p3 = &z;
+	//	p3 = &x; error: assignment of read-only variable 'p3'
+	//	typedef olarak tanımlaşmış bir değişkenin başına yerleştirilen const -> int* const p3 gibi davranır.
+	*p3 = 9;
+	cout << "*p3 : " << *p3 << endl;
+	*/
+
+	/* referans veya pointer döndüren fonksiyonlar ile bir değişkenin değerinin değiştirilmesi
+	int* func(int* x)
+	{
+		return x;
+	}
+
+	int main()
+	{
+		int a = 10;
+		*func(a) = 20;
+	}
+
+	//	Geri dönüş değeri pointer olan bir fonksiyon kullanarak a değişkeninin değerinin değiştirilmesi.
+	// 	Bu aynı şekilde referans ile de yapılabilir.
+
+	int& func(int& x)
+	{
+		return x;
+	}
+
+	int main()
+	{
+		int a = 10;
+		func(a) = 20;
+	}
+	*/
+
+
+
 	return 0;
 }
