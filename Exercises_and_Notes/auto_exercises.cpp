@@ -32,6 +32,20 @@ const char* poo()
     return "hello";
 }
 */
+
+// auto semantiği 4
+/*
+auto foo(int *x, int *y)
+{
+    return *x + *y;
+}
+
+const int pow()
+{
+    return 5;
+}
+*/
+
 int main()
 {
     /***********************************************
@@ -100,5 +114,41 @@ int main()
 
     auto& rarr = "batu";    //  const char (&rarr)[5] şeklinde bir referans tanımlamayla aynı işlevdedir.
     cout << "rarr : " << rarr << endl;
+    */
+
+    /***********************************************
+     *             auto semantiği 4                *
+     ***********************************************/
+    /*
+    double dv = 3.7;
+    auto p1 = &dv;
+    auto& r1 = *p1;
+    r1 = 13.2;
+    cout << "dv : " << dv << endl;
+    //  auto ile tanımlanan bir referans kullanılarak dv değişkeninin değeri 
+    //  değiştirilmiştir.
+
+    auto const p2 = &dv;    //  double* const p2 olarak tanımlanmıştır ve p2'nin 
+                            //  gösterdiği adres değiştirilemez. Fakat *p2'nin değeri
+                            //  değiştirilebilir. Yani burada kullanılan const tanımı
+                            //  top level const'dur.(const auto p2 tanımlaması da bir
+                            //  fark oluşturmaz.)
+    *p2 = 5.3;
+    cout << "dv : " << dv << endl;
+
+    int a = 5;
+    int b = 7;
+    auto c = foo(&a, &b);
+    cout << "c : " << c << endl;
+
+    const auto& r2 = pow();
+    cout << "r2 : " << r2 << endl;
+
+    const int x = 7;
+    auto& r3 = x;   //  const olan bir değişkeni gösteren referanslar auto tanımı ile const
+                    //  olarak tanımlanırlar.
+
+    auto p = &x;    //  referanslarda olduğu gibi const değişkeni gösteren pointerlar const
+                    //  olarak tanımlanırlar.
     */
 }
