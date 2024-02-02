@@ -12,14 +12,16 @@ int** foo(int** a)
 // pointer to pointer 6
 void poo(int** a, int** b)
 {
-    int *temp = *a;
-    *a = *b;
-    *b = temp;
+    int *temp = *a; // a pointerinin işaret ettiği pointerın içinde ki adresi al ve temp pointerının işaret ettiği yer yap.
+    *a = *b;        // a pointerının işaret ettiği pointerın içinde ki adresi b pointerının işaret ettiği pointerın içinde ki adresler değiştir.
+    *b = temp;      // b pointerının işaret ettiği pointerın içinde ki adresi temp pointerının içinde ki adresle değiştir.
 }
 
 int main()
 {
-    // pointer to pointer 1
+    /***********************************************
+     *             pointer to pointer 1            *
+     ***********************************************/
     /*
     int x = 1;
     int y = 2;
@@ -37,7 +39,9 @@ int main()
     cout << "y : " << y << endl;
     */
 
-    // pointer to pointer 2
+    /***********************************************
+     *             pointer to pointer 2            *
+     ***********************************************/
     /*
     int x = 0;
     int y = 1;
@@ -53,7 +57,9 @@ int main()
     cout << "y : " << y << endl;
     */
     
-    // pointer to pointer 3
+    /***********************************************
+     *             pointer to pointer 3            *
+     ***********************************************/
     /*
     int x = 1;
     int y = 5;
@@ -67,7 +73,9 @@ int main()
     cout << "*px : " << *px << endl;
     */
 
-    // pointer to pointer 4
+    /***********************************************
+     *             pointer to pointer 4            *
+     ***********************************************/
     /*
     int x = 1;
     const int* cpx = &x;
@@ -77,7 +85,9 @@ int main()
     // int** cppx = &cpx;
     */
 
-    // pointer to pointer 5
+    /***********************************************
+     *             pointer to pointer 5            *
+     ***********************************************/
     /*
     int a[] = { 1, 2, 3, 4, 5 };
     int* p = a;
@@ -100,8 +110,11 @@ int main()
     }
     */
 
-    // pointer to pointer 6
-
+    /***********************************************
+     *             pointer to pointer 6            *
+     ***********************************************/ 
+     //(pointer to pointer'ın işaret ettiği yeri değiştiren fonksiyon)
+    /*
     int x = 1;
     int y = 2;
     int* p1 = &x;
@@ -109,10 +122,10 @@ int main()
 
     cout << "p1'in gosterdigi adres : " << p1 << "\tve degeri : " << *p1 << endl;
     cout << "p2'nin gosterigi adres : " << p2 << "\tve degeri : " << *p2 << endl;
-    poo(&p1, &p2);
+    poo(&p1, &p2); // iki pointerın işaret ettiği adresler yer değiştiriliyor.
     cout << "p1'in gosterdigi adres : " << p1 << "\tve degeri : " << *p1 << endl;
     cout << "p2'nin gosterigi adres : " << p2 << "\tve degeri : " << *p2 << endl;
-
+    */
 
     return 0;
 }
